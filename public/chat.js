@@ -10,6 +10,15 @@ var feedback = document.getElementById('feedback');
 
 // Emit events
 
+message.addEventListener('keyup', function(event){
+	if(event.keyCode === 13)
+	{
+		event.preventDefault();
+		btn.click();
+	}
+});
+
+
 btn.addEventListener('click', function(){
 	socket.emit('chat', {
 		message: message.value,
